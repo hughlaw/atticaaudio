@@ -32,7 +32,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-sanity',
       options: {
-        watchMode: true,
+        // watchMode: true,
         projectId: 'xgirpvqb',
         dataset: 'production',
         token: process.env.SANITY_TOKEN,

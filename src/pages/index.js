@@ -20,7 +20,6 @@ const IndexPage = () => {
     {
       sanitySiteSettings {
         address
-        copyright
         email
         phone
       }
