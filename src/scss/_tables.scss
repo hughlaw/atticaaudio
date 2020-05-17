@@ -1,0 +1,25 @@
+table {
+  width: 100%;
+  border-spacing: 0;
+  small {
+    display: block;
+    color: lighten($color: $bodyColor, $amount: 20);
+  }
+  margin-bottom: 3rem;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: darken($color: $bodyBgColor, $amount: 3);
+}
+
+td {
+  padding: 0.5rem 0;
+  vertical-align: top;
+  &:nth-child(2) {
+    text-align: right;
+  }
+}

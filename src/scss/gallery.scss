@@ -1,0 +1,17 @@
+#tour {
+  padding-bottom: 0;
+}
+
+.embla {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+}
+
+.embla__slide {
+  position: relative; /* Needed if loop: true */
+  flex: 0 0 80%; /* Choose any slide width */
+  border-right: 5px solid white;
+}
