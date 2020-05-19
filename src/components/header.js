@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { useRef, useState, useEffect } from 'react';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { throttle } from 'lodash';
 
 import Logo from '../images/Attica_Logo_Reverse.svg';
@@ -9,6 +10,7 @@ const Splash = () => {
   return (
     <div id="splash">
       <img src={Logo} alt="attica logo" />
+      <ExpandMoreIcon fontSize="large" />
     </div>
   );
 };
