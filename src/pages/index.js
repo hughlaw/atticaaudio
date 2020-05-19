@@ -14,6 +14,7 @@ import Img from 'gatsby-image';
 
 import BlockContent from '@sanity/block-content-to-react';
 import Gallery from '../components/Gallery';
+import Map from '../components/Map';
 
 const IndexPage = () => {
   const { sanitySiteSettings, sanityHomepage } = useStaticQuery(graphql`
@@ -106,8 +107,6 @@ const IndexPage = () => {
       }
     }
   `);
-
-  console.log(sanityHomepage);
 
   const section1 = {
     title: sanityHomepage._rawSection1.title,
@@ -234,9 +233,10 @@ const IndexPage = () => {
             </dd>
           </div>
         </dl>
-
-        <div className="map"></div>
       </Section>
+      <div className="map">
+        <Map center={{ lat: 55.047627, lng: -7.842703 }} zoom={12} />
+      </div>
     </Layout>
   );
 };

@@ -8,7 +8,12 @@ export default function EquipmentBlock({ title, open = false, children }) {
 
   return (
     <div className="equipment-block">
-      <div className="accordion-header" onClick={() => setIsOpen(!isOpen)}>
+      <div
+        className="accordion-header"
+        onClick={() => setIsOpen(!isOpen)}
+        onKeyDown={() => setIsOpen(!isOpen)}
+        role="button"
+      >
         <h3>{title}</h3>
         {isOpen ? (
           <ArrowDropDownRoundedIcon fontSize="large" />
