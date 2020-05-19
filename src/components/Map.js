@@ -3,7 +3,11 @@ import GoogleMapReact from 'google-map-react';
 import MapMarker from '../images/map-marker.svg';
 
 const AtticaMarker = () => {
-  return <img src={MapMarker} alt="" width="40" height="40" />;
+  const style = {
+    position: 'absolute',
+    transform: 'translate(-50%, -100%)',
+  };
+  return <img src={MapMarker} alt="" width="40" height="40" style={style} />;
 };
 
 const createMapOptions = () => {
