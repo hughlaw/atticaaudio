@@ -57,14 +57,6 @@ const IndexPage = () => {
             }
           }
         }
-        dividerImage5 {
-          alt
-          asset {
-            fluid {
-              ...GatsbySanityImageFluid
-            }
-          }
-        }
         _rawSection1
         _rawTour
         tour {
@@ -117,19 +109,13 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
 
-      <Img
-        fluid={sanityHomepage.dividerImage1.asset.fluid}
-        alt={sanityHomepage.dividerImage1.alt}
-        className="divider-image"
-      />
-
       <Section id="about" title={section1.title}>
         <BlockContent blocks={section1.body} />
       </Section>
 
       <Img
-        fluid={sanityHomepage.dividerImage2.asset.fluid}
-        alt={sanityHomepage.dividerImage2.alt}
+        fluid={sanityHomepage.dividerImage1.asset.fluid}
+        alt={sanityHomepage.dividerImage1.alt}
         className="divider-image"
       />
 
@@ -175,8 +161,8 @@ const IndexPage = () => {
       </Section>
 
       <Img
-        fluid={sanityHomepage.dividerImage4.asset.fluid}
-        alt={sanityHomepage.dividerImage4.alt}
+        fluid={sanityHomepage.dividerImage2.asset.fluid}
+        alt={sanityHomepage.dividerImage2.alt}
         className="divider-image"
       />
 
@@ -201,8 +187,8 @@ const IndexPage = () => {
       </Section>
 
       <Img
-        fluid={sanityHomepage.dividerImage5.asset.fluid}
-        alt={sanityHomepage.dividerImage5.alt}
+        fluid={sanityHomepage.dividerImage3.asset.fluid}
+        alt={sanityHomepage.dividerImage3.alt}
         className="divider-image"
       />
 

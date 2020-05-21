@@ -1,19 +1,22 @@
 import PropTypes from 'prop-types';
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { throttle } from 'lodash';
 
 import Logo from '../images/Attica_Logo_Reverse.svg';
 import styled from 'styled-components';
 
-const Splash = () => {
-  return (
-    <div id="splash">
-      <img src={Logo} alt="attica logo" />
-      <ExpandMoreIcon fontSize="large" />
-    </div>
-  );
-};
+const Splash = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background: url(${(props) => props.image});
+  background-color: #454545;
+  background-blend-mode: multiply;
+  background-size: cover;
+`;
 
 const Backdrop = styled.div`
   position: fixed;
@@ -23,23 +26,9 @@ const Backdrop = styled.div`
   background: rgba(0, 0, 0, 0.8);
 `;
 
-const Header = ({ siteTitle }) => {
+const Header = ({ siteTitle, headerImage }) => {
   const navRef = useRef(null);
   const menuToggleRef = useRef(null);
-  const headerRef = useRef(null);
-
-  const checkMenuVisibility = () => {
-    const viewport_height = window.innerHeight;
-    const scroll_length = window.scrollY;
-
-    if (scroll_length > viewport_height) {
-      headerRef.current.classList.add('is-active');
-    } else {
-      headerRef.current.classList.remove('is-active');
-    }
-  };
-
-  const handleScroll = throttle(checkMenuVisibility, 500);
 
   const [showBackdrop, setShowBackdrop] = useState(false);
 
@@ -49,16 +38,9 @@ const Header = ({ siteTitle }) => {
     navRef.current.classList.toggle('is-active');
   };
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  });
-
   return (
     <>
-      <header ref={headerRef}>
+      <header>
         <h1>{siteTitle}</h1>
         <button
           className="hamburger hamburger--spin"
@@ -103,7 +85,10 @@ const Header = ({ siteTitle }) => {
           </li>
         </ul>
       </nav>
-      <Splash />
+      <Splash id="splash" image={headerImage}>
+        <img src={Logo} alt="attica logo" />
+        <ExpandMoreIcon fontSize="large" />
+      </Splash>
     </>
   );
 };

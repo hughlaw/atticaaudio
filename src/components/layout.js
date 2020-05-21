@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Header from './header';
 import '../scss/App.scss';
 
-const Layout = ({ children }) => {
+const Layout = ({ headerImage, children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -20,12 +20,24 @@ const Layout = ({ children }) => {
           title
         }
       }
+      sanityHomepage {
+        splashImage {
+          asset {
+            fluid(maxWidth: 1200) {
+              src
+            }
+          }
+        }
+      }
     }
   `);
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header
+        siteTitle={data.site.siteMetadata.title}
+        headerImage={data.sanityHomepage.splashImage.asset.fluid.src}
+      />
       <main>{children}</main>
       <footer>© {new Date().getFullYear()} Attica Audio</footer>
     </>
