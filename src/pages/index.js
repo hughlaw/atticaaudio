@@ -49,14 +49,6 @@ const IndexPage = () => {
             }
           }
         }
-        dividerImage4 {
-          alt
-          asset {
-            fluid {
-              ...GatsbySanityImageFluid
-            }
-          }
-        }
         _rawSection1
         _rawTour
         tour {
