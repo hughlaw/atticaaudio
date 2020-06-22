@@ -74,8 +74,18 @@ const Header = ({ siteTitle, headerImage }) => {
             </a>
           </li>
           <li>
+            <a href="#accommodation" onClick={onToggleMenu}>
+              Accommodation
+            </a>
+          </li>
+          <li>
             <a href="#rates" onClick={onToggleMenu}>
               Rates & Bookings
+            </a>
+          </li>
+          <li>
+            <a href="#faqs" onClick={onToggleMenu}>
+              FAQs
             </a>
           </li>
           <li>

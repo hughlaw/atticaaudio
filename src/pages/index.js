@@ -49,6 +49,14 @@ const IndexPage = () => {
             }
           }
         }
+        dividerImage4 {
+          alt
+          asset {
+            fluid {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
         _rawSection1
         _rawTour
         tour {
@@ -84,10 +92,29 @@ const IndexPage = () => {
           }
         }
         _rawEquipmentSection
+        _rawAccommodation
+        accommodation {
+          galleryImages {
+            _key
+            alt
+            asset {
+              fluid {
+                ...GatsbySanityImageFluid
+              }
+            }
+          }
+        }
         rates {
           title
         }
         _rawRates
+        faqs {
+          groupTitle
+          questions {
+            quesiton
+            answer
+          }
+        }
       }
     }
   `);
@@ -158,6 +185,18 @@ const IndexPage = () => {
         className="divider-image"
       />
 
+      {sanityHomepage._rawAccommodation.enableSection && (
+        <Section
+          id="accommodation"
+          className="pb-0"
+          title={sanityHomepage._rawAccommodation.title}
+          fullWidth
+        >
+          <BlockContent blocks={sanityHomepage._rawAccommodation.introText} />
+          <Gallery images={sanityHomepage.accommodation.galleryImages} />
+        </Section>
+      )}
+
       <Section id="rates" title={sanityHomepage.rates.title}>
         <table>
           <thead className="sr-only">
@@ -181,6 +220,31 @@ const IndexPage = () => {
       <Img
         fluid={sanityHomepage.dividerImage3.asset.fluid}
         alt={sanityHomepage.dividerImage3.alt}
+        className="divider-image"
+      />
+
+      <Section id="faqs" title="FAQs">
+        {sanityHomepage.faqs.map((group) => {
+          return (
+            <EquipmentBlock
+              key={group._key}
+              title={group.groupTitle}
+              open={group.open_by_default}
+            >
+              {group.questions.map((item) => (
+                <div className="pl-1 pr-1">
+                  <h4 key={item._key}>{item.quesiton}</h4>
+                  <p>{item.answer}</p>
+                </div>
+              ))}
+            </EquipmentBlock>
+          );
+        })}
+      </Section>
+
+      <Img
+        fluid={sanityHomepage.dividerImage4.asset.fluid}
+        alt={sanityHomepage.dividerImage4.alt}
         className="divider-image"
       />
 

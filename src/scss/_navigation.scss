@@ -48,11 +48,11 @@ header {
 
 #navigation {
   background-color: $dark;
-  transition: all 0.2s ease-out;
+  transition: all 0.3s ease-in-out;
   position: fixed;
   z-index: 1;
   width: 100%;
-  transform: translate3d(0, -380px, 0);
+  transform: translate3d(0, -505px, 0);
   padding-top: 70px;
   &.is-active {
     transform: translate3d(0, 0, 0);
