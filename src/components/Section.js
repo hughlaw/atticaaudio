@@ -6,9 +6,12 @@ const Heading = styled.h2`
   text-transform: uppercase;
 `;
 
-export default function Section({ id, title, fullWidth, children }) {
+export default function Section({ id, title, fullWidth, children, className }) {
   return (
-    <section id={id} className={fullWidth ? 'full-width' : ''}>
+    <section
+      id={id}
+      className={fullWidth ? `full-width ${className}` : className}
+    >
       <Heading>{title}</Heading>
       {children}
     </section>

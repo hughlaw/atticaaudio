@@ -224,16 +224,17 @@ const IndexPage = () => {
       />
 
       <Section id="faqs" title="FAQs">
-        {sanityHomepage.faqs.map((group) => {
+        {sanityHomepage.faqs.map((group, i) => {
           return (
             <EquipmentBlock
-              key={group._key}
+              key={i}
               title={group.groupTitle}
               open={group.open_by_default}
+              className="pb-1"
             >
-              {group.questions.map((item) => (
-                <div className="pl-1 pr-1">
-                  <h4 key={item._key}>{item.quesiton}</h4>
+              {group.questions.map((item, i) => (
+                <div key={i} className="pl-1 pr-1">
+                  <h4>{item.quesiton}</h4>
                   <p>{item.answer}</p>
                 </div>
               ))}

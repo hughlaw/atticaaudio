@@ -3,11 +3,16 @@ import ArrowDropDownRoundedIcon from '@material-ui/icons/ArrowDropDownRounded';
 import ArrowRightRoundedIcon from '@material-ui/icons/ArrowRightRounded';
 import PropTypes from 'prop-types';
 
-export default function EquipmentBlock({ title, open = false, children }) {
+export default function EquipmentBlock({
+  title,
+  open = false,
+  children,
+  className,
+}) {
   const [isOpen, setIsOpen] = useState(open);
 
   return (
-    <div className="equipment-block">
+    <div className={`equipment-block ${className}`}>
       <button className="accordion-header" onClick={() => setIsOpen(!isOpen)}>
         <h3>{title}</h3>
         {isOpen ? (
