@@ -83,6 +83,11 @@ const Header = ({ siteTitle, headerImage }) => {
               Rates & Bookings
             </a>
           </li>
+          {/* <li>
+            <a href="#bio" onClick={onToggleMenu}>
+              Tommy McLaughlin
+            </a>
+          </li> */}
           <li>
             <a href="#faqs" onClick={onToggleMenu}>
               FAQs

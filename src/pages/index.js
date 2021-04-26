@@ -104,6 +104,18 @@ const IndexPage = () => {
             }
           }
         }
+        _rawBio
+        bio {
+          enableSection
+          bioImage {
+            alt
+            asset {
+              fluid(maxWidth: 600) {
+                ...GatsbySanityImageFluid
+              }
+            }
+          }
+        }
         rates {
           title
         }
@@ -222,6 +234,26 @@ const IndexPage = () => {
         alt={sanityHomepage.dividerImage3.alt}
         className="divider-image"
       />
+
+      {sanityHomepage._rawBio.enableSection && (
+        <Section
+          id="bio"
+          title={sanityHomepage._rawBio.sectionTitle}
+          className="pb-0"
+        >
+          <div className="d-flex justify-space-between">
+            <div className="w-45">
+              <Img
+                fluid={sanityHomepage.bio.bioImage.asset.fluid}
+                alt={sanityHomepage.bio.bioImage.alt}
+              />
+            </div>
+            <div className="w-45">
+              <BlockContent blocks={sanityHomepage._rawBio.bio} />
+            </div>
+          </div>
+        </Section>
+      )}
 
       <Section id="faqs" title="FAQs">
         {sanityHomepage.faqs.map((group, i) => {

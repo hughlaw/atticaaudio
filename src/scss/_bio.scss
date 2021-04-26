@@ -1,0 +1,9 @@
+@media screen and (max-width: $sm-max) {
+  #bio > .d-flex {
+    display: block;
+  }
+  .w-45 {
+    width: 100%;
+    display: block;
+  }
+}
