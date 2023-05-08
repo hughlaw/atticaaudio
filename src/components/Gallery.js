@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import EmblaCarousel from 'embla-carousel';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { PropTypes } from 'prop-types';
 
 export default function Gallery({ images }) {
@@ -18,7 +18,7 @@ export default function Gallery({ images }) {
       <div className="embla__container">
         {images.map((image) => (
           <div key={image._key} className="embla__slide">
-            <Img fluid={image.asset.fluid} alt={image.alt} />
+            <GatsbyImage image={image.asset.gatsbyImageData} alt={image.alt} />
           </div>
         ))}
       </div>

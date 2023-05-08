@@ -100,7 +100,10 @@ const Header = ({ siteTitle, headerImage }) => {
           </li>
         </ul>
       </nav>
-      <Splash id="splash" image={headerImage}>
+      <Splash
+        id="splash"
+        image={headerImage.gatsbyImageData.images.fallback.src}
+      >
         <img src={Logo} alt="attica logo" />
         <ExpandMoreIcon fontSize="large" />
       </Splash>
