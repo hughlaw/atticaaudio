@@ -41,9 +41,9 @@
   },
   "devDependencies": {
     "@portabletext/react": "^3.0.0",
-    "@types/node": "^18.16.2",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.1",
+    "@types/node": "^20.1.0",
+    "@types/react": "^18.2.6",
+    "@types/react-dom": "^18.2.4",
     "embla-carousel": "8.0.0-rc03",
     "typescript": "^5.0.4"
   }
