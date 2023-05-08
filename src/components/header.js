@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { useRef, useState } from 'react';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import Logo from '../images/Attica_Logo_Reverse.svg';
 import styled from 'styled-components';

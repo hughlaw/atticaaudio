@@ -6,9 +6,10 @@ import Section from '../components/Section';
 import EquipmentBlock from '../components/EquipmentBlock';
 import Rate from '../components/Rate';
 
-import RoomIcon from '@material-ui/icons/Room';
-import PhoneIcon from '@material-ui/icons/Phone';
-import EmailIcon from '@material-ui/icons/Email';
+import PlaceIcon from '@mui/icons-material/Place';
+import PhoneIcon from '@mui/icons-material/Phone';
+import EmailIcon from '@mui/icons-material/Email';
+
 import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
@@ -288,7 +289,7 @@ const IndexPage: React.FC<PageProps> = ({ data }) => {
         <dl>
           <div className="d-flex">
             <dt>
-              <RoomIcon />
+              <PlaceIcon />
             </dt>
             <dd>{data.sanitySiteSettings.address}</dd>
           </div>

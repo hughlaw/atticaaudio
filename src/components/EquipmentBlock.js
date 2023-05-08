@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import ArrowDropDownRoundedIcon from '@material-ui/icons/ArrowDropDownRounded';
-import ArrowRightRoundedIcon from '@material-ui/icons/ArrowRightRounded';
 import PropTypes from 'prop-types';
+import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
+import ArrowRightRoundedIcon from '@mui/icons-material/ArrowRightRounded';
 
 export default function EquipmentBlock({
   title,
